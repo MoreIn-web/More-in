@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Our App</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      margin: 0;
+    }
+
+    /* Background animation */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 200%; height: 200%;
+      background: linear-gradient(-45deg, #667eea, #764ba2, #6dd5ed, #2193b0);
+      background-size: 400% 400%;
+      z-index: -3;
+      animation: gradientMove 20s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Container */
+    .container {
+      z-index: 2;
+      text-align: center;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Custom Logo */
+    .app-icon {
+      width: 220px;
+      height: auto;
+      margin: 0 auto 20px;
+    }
+    .app-icon img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Download Button */
+    .download-btn {
+      position: relative;
+      display: inline-block;
+      padding: 15px 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(90deg, #ff5722, #ff9800);
+      border-radius: 12px;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255,87,34,0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .download-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255,87,34,0.9);
+    }
+    .download-btn::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -75px;
+      width: 50px; height: 100%;
+      background: rgba(255,255,255,0.6);
+      transform: skewX(-25deg);
+      animation: shine 2.5s infinite;
+    }
+    @keyframes shine {
+      0% { left: -75px; }
+      100% { left: 120%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="app-icon">
+      <!-- Replace Play Store logo with your uploaded logo -->
+      <img src="morein-logo.jpg" alt="Morein Logo">
+    </div>
+    <a href="https://example.com/your-app.apk" class="download-btn" download>
+      ⬇ Download APK
+    </a>
+  </div>
+</body>
+</html>
